@@ -8,6 +8,133 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+  <nav id="navbar">
+    <header>HTML Documentation</header>
+    <li><a class="nav-link" href="#Getting_Started">Getting Started</a></li>
+    <li><a class="nav-link" href="#What_is_Html">What is HTML</a></li>
+    <li><a class="nav-link" href="#Anatomy_of_an_HTML_element">Anatomy of an HTML element</a></li>
+    <li><a class="nav-link" href="#Attributes">Attributes</a></li>
+    <li><a class="nav-link" href="#Anatomy_of_an_HTML_document">Anatomy of an HTML document</a></li>
+    <li><a class="nav-link" href="#HTML_Comments">HTML Comments</a></li>
+    <li><a class="nav-link" href="#Summary">Summary</a></li>
+  </nav>
+  <main id="main-doc">
+    <section id="Getting_Started" class="main-section">
+      <header><b>Getting Started</b></header>
+      <p>In this article we cover the absolute basics of HTML. To get you started, this article defines elements, attributes, and all the other important terms you may have heard. It also explains where these fit into HTML. You will learn how HTML elements are structured, how a typical HTML page is structured, and other important basic language features. Along the way, there will be an opportunity to play with HTML too!</p>
+    </section>
+    <section id="What_is_Html" class="main-section">
+      <header><b>What is HTML</b></header>
+      <p>HTML (Hypertext Markup Language) is a markup language that tells web browsers how to structure the web pages you visit. It can be as complicated or as simple as the web developer wants it to be. HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of content to make it appear or act in a certain way. The enclosing tags can make content into a hyperlink to connect to another page, italicize words, and so on. For example, consider the following line of text:</p>
+      <code>My cat is very grumpy</code>
+      <p>If we wanted the text to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph (&ltp&gt) element:</p> 
+      <code>&ltp&gtMy cat is very grumpy&lt/p&gt</code>
+    </section>
+    <section id="Anatomy_of_an_HTML_element" class="main-section">
+      <header><b>Anatomy of an HTML element</b></header>
+      <p>Let's further explore our paragraph element from the previous section:</p>
+      <img src="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-small.png">
+      <p>The anatomy of our element is:</p>
+      <ul>
+        <li><b>The opening tag: </b>This consists of the name of the element (in this example, p for paragraph), wrapped in opening and closing angle brackets. This opening tag marks where the element begins or starts to take effect. In this example, it precedes the start of the paragraph text.</li>
+        <li><b>The content: </b>This is the content of the element. In this example, it is the paragraph text.</li>
+        <li><b>The closing tag: </b>This is the same as the opening tag, except that it includes a forward slash before the element name. This marks where the element ends. Failing to include a closing tag is a common beginner error that can produce peculiar results.</li>
+      </ul>
+      <p>The element is the opening tag, followed by content, followed by the closing tag.</p>
+      <header>Nesting elements</header>
+      <p>Elements can be placed within other elements. This is called nesting. If we wanted to state that our cat is very grumpy, we could wrap the word very in a &ltstrong&gt element, which means that the word is to have strong(er) text formatting:</p>
+      <code>&ltp&gtMy cat is &ltstrong&gtvery&lt/strong&gt grumpy&lt/p&gt</code>
+      <header>Block versus inline elements</header>
+      <p>There are two important categories of elements to know in HTML: block-level elements and inline elements.</p>
+      <ul>
+        <li>Block-level elements form a visible block on a page. A block-level element appears on a new line following the content that precedes it. Any content that follows a block-level element also appears on a new line. Block-level elements are usually structural elements on the page. For example, a block-level element might represent headings, paragraphs, lists, navigation menus, or footers. A block-level element wouldn't be nested inside an inline element, but it might be nested inside another block-level element.</li>
+        <li>Inline elements are contained within block-level elements, and surround only small parts of the document's content (not entire paragraphs or groupings of content). An inline element will not cause a new line to appear in the document. It is typically used with text, for example an &lta> element creates a hyperlink, and elements such as &ltem> or &ltstrong> create emphasis.</li>
+      </ul>
+      <header>Empty elements</header>
+      <p>Not all elements follow the pattern of an opening tag, content, and a closing tag. Some elements consist of a single tag, which is typically used to insert/embed something in the document. For example, the &ltimg> element embeds an image file onto a page:</p>
+      <code>&ltimg src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png"></code>
+    </section>
+    <section id="Attributes" class="main-section">
+      <header><b>Attributes</b></header>
+      <p>Elements can also have attributes. Attributes look like this:</p>
+      <img src="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-attribute-small.png">
+      <p>Attributes contain extra information about the element that won't appear in the content. In this example, the class attribute is an identifying name used to target the element with style information.</p>
+      <p>An attribute should have:</p>
+      <ul>
+        <li>A space between it and the element name. (For an element with more than one attribute, the attributes should be separated by spaces too.)</li>
+        <li>The attribute name, followed by an equal sign.</li>
+        <li>An attribute value, wrapped with opening and closing quote marks.</li>
+      </ul>
+      <header>Boolean attributes</header>
+      <p>Sometimes you will see attributes written without values. This is entirely acceptable. These are called Boolean attributes. Boolean attributes can only have one value, which is generally the same as the attribute name. For example, consider the disabled attribute, which you can assign to form input elements. (You use this to disable the form input elements so the user can't make entries. The disabled elements typically have a grayed-out appearance.) For example:</p>
+      <code>&ltinput type="text" disabled="disabled"></code>
+      <p>As shorthand, it is acceptable to write this as follows:</p>
+      <code>&ltinput type="text" disabled></code>
+      <header>Omitting quotes around attribute values</header>
+      <p>If you look at code for a lot of other sites, you might come across a number of strange markup styles, including attribute values without quotes. This is permitted in certain circumstances, but it can also break your markup in other circumstances. For example, if we revisit our link example from earlier, we could write a basic version with only the href attribute, like this:</p>
+      <code>&lta href=https://www.mozilla.org/>favorite website&lt/a></code>
+      <p>However, as soon as we add the title attribute in this way, there are problems:</p>
+      <code>&lta href=https://www.mozilla.org/ title=The Mozilla homepage>favorite website&lt/a></code>
+      <p>As written above, the browser misinterprets the markup, mistaking the title attribute for three attributes: a title attribute with the value The, and two Boolean attributes, Mozilla and homepage. Obviously, this is not intended! It will cause errors or unexpected behavior.</p>
+      <header>Single or double quotes?</header>
+      <p>In this article you will also notice that the attributes are wrapped in double quotes. However, you might see single quotes in some HTML code. This is a matter of style. You can feel free to choose which one you prefer. Both of these lines are equivalent:</p>
+      <code>&lta href="https://www.example.com">A link to my example.&lt/a></code>
+      <code>&lta href='https://www.example.com'>A link to my example.&lt/a></code>
+      <p>Make sure you don't mix single quotes and double quotes. This example (below) shows a kind of mixing quotes that will go wrong:</p>
+      <code>&lta href="https://www.example.com'>A link to my example.&lt/a></code>
+      <p>However, if you use one type of quote, you can include the other type of quote inside your attribute values:</p>
+      <code>&lta href="https://www.example.com" title="Isn't this fun?">A link to my example.&lt/a></code>
+      <p>To use quote marks inside other quote marks of the same type (single quote or double quote), use HTML entities. For example, this will break:</p>
+      <code>&lta href='https://www.example.com' title='Isn't this fun?'>A link to my example.&lt/a></code>
+      <p>Instead, you need to do this:</p>
+      <code>&lta href='https://www.example.com' title='Isn&amp;apos;t this fun?'>A link to my example.&lt/a></code>
+    </section>
+    <section id="Anatomy_of_an_HTML_document" class="main-section">
+      <header><b>Anatomy of an HTML document</b></header>
+      <p>Individual HTML elements aren't very useful on their own. Next, let's examine how individual elements combine to form an entire HTML page:</p>
+      <code>
+        <pre>
+&lt!DOCTYPE html>
+&lthtml>
+&lthead>
+  &ltmeta charset="utf-8">
+  &lttitle>My test page&lt/title>
+&lt/head>
+&ltbody>
+  &ltp>This is my page&lt/p>
+&lt/body>
+&lt/html>
+        </pre>
+      </code>
+      <p>Here we have:</p>
+      <ol>
+        <li>&lt!DOCTYPE html>: The doctype. When HTML was young (1991-1992), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered good HTML. Doctypes used to look something like this:</li>
+        <code>&lt!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></code>
+        <p>More recently, the doctype is a historical artifact that needs to be included for everything else to work right. &lt!DOCTYPE html> is the shortest string of characters that counts as a valid doctype. That is all you need to know!</p>
+        <li>&lthtml>&lt/html>: The &lthtml> element. This element wraps all the content on the page. It is sometimes known as the root element.</li>
+        <li>&lthead>&lt/head>: The &lthead> element. This element acts as a container for everything you want to include on the HTML page, that isn't the content the page will show to viewers. This includes keywords and a page description that would appear in search results, CSS to style content, character set declarations, and more. You will learn more about this in the next article of the series.</li>
+        <li>&ltmeta charset="utf-8">: The &ltmeta> element. This element represents metadata that cannot be represented by other HTML meta-related elements, like &ltbase>, &ltlink>, &ltscript>, &ltstyle> or &lttitle>. The charset attributes sets the character set for your document to UTF-8, which includes most characters from the vast majority of human written languages. With this setting, the page can now handle any textual content it might contain. There is no reason not to set this, and it can help avoid some problems later.</li>
+        <li>&lttitle>&l/title>: The &ltitle> element. This sets the title of the page, which is the title that appears in the browser tab the page is loaded in. The page title is also used to describe the page when it is bookmarked.</li>
+        <li>&ltbody>&lt/body>: The &ltbody> element. This contains all the content that displays on the page, including text, images, videos, games, playable audio tracks, or whatever else.</li>
+      </ol>
+    </section>
+    <section id="HTML_Comments" class="main-section">
+      <header><b>HTML Comments</b></header>
+      <p>HTML has a mechanism to write comments in the code. Browsers ignore comments, effectively making comments invisible to the user. The purpose of comments is to allow you to include notes in the code to explain your logic or coding. This is very useful if you return to a code base after being away for long enough that you don't completely remember it. Likewise, comments are invaluable as different people are making changes and updates.</p>
+      <p>To write an HTML comment, wrap it in the special markers &lt!-- and -->. For example:</p>
+      <code>
+        <pre>
+&ltp>I'm not inside a comment&lt/p>
+
+&lt!-- &ltp>I am!&lt/p> -->
+        </pre>
+      </code>
+    </section>
+    <section id="Summary" class="main-section">
+      <header><b>Summary</b></header>
+      <p>You made it to the end of the article! We hope you enjoyed your tour of the basics of HTML.</p>
+      <p>At this point, you should understand what HTML looks like, and how it works at a basic level. You should also be able to write a few elements and attributes. The subsequent articles of this module go further on some of the topics introduced here, as well as presenting other concepts of the language.</p>
+    </section>
+  </main>
 </body>
 </html>
